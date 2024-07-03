@@ -878,9 +878,9 @@ class MemPool(object):
         utxos = []
         for tx_hash in self.hashXs.get(hashX, ()):
             tx = self.txs.get(tx_hash)
-            for pos, (hX, value, asset) in enumerate(tx.out_pairs):
-                if hX == hashX and is_asset_valid(asset):
-                    utxos.append(UTXO(-1, pos, tx_hash, 0, asset, value))
+            for pos, (hX, value, tx_asset) in enumerate(tx.out_pairs):
+                if hX == hashX and is_asset_valid(tx_asset):
+                    utxos.append(UTXO(-1, pos, tx_hash, 0, tx_asset, value))
         return utxos
 
     async def get_asset_creation_if_any(self, asset: str):
