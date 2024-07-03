@@ -3,3 +3,5 @@ pylru
 plyvel
 uvloop
 aiorpcx[ws]>=0.22,<0.23
+
+evrhash @ git+https://github.com/EvrmoreOrg/cpp-evrprogpow
